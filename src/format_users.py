@@ -16,7 +16,7 @@ def filter_users(data: dict) -> list[str]:
 
         first_name = user["name"]["first"]
         last_name = user ["name"]["last"]
-        full_name = first_name +" "+ last_name
+        full_name = f"{first_name} {last_name}"
         names.append(full_name)
         
     log.info("Filtered user list is ready")

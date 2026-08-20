@@ -1,7 +1,6 @@
 import logging
 import os
 import random
-#import time
 from dotenv import load_dotenv
 from pathlib import Path
 from langchain_mistralai import ChatMistralAI
@@ -24,7 +23,6 @@ UNKNOWN_RESPONSES = [
 
 MAX_ITERATIONS = int(os.getenv("AGENT_MAX_ITERATIONS"))
 MAX_EXECUTION_TIME = int(os.getenv("AGENT_MAX_EXECUTION_TIME"))
-#SLEEP_TIME = int(os.getenv("AGENT_SLEEP_TIME"))
 TEMPERATURE = float(os.getenv("LLM_TEMPERATURE"))
 MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS"))
 
@@ -69,9 +67,6 @@ agent_executor = AgentExecutor(
 
 def find_best_work(person_name: str, description: str) -> str:
     log.info(f"Finding best work for: {person_name}")
-
-    #time.sleep(SLEEP_TIME)
-
     unknown_response = random.choice(UNKNOWN_RESPONSES)
 
     query = f"""
